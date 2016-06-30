@@ -25,13 +25,13 @@ RUN apt-get install -y -m --no-install-recommends \
 #  libboost-dev libboost-filesystem-dev libboost-program-options-dev libboost-regex-dev \
 #  libboost-system-dev libboost-thread-dev libboost-context-dev
 
-ARG LIBBOOST=http://downloads.sourceforge.net/project/boost/boost/1.61.0/boost_1_61_0.tar.bz2
+ARG LIBBOOST=http://downloads.sourceforge.net/project/boost/boost/1.60.0/boost_1_60_0.tar.bz2
 ADD $LIBBOOST /tmp
 
 # For pyconfig.h
 RUN apt-get install -y -m --no-install-recommends python-dev
 
-WORKDIR /tmp/boost_1_61_0
+WORKDIR /tmp/boost_1_60_0
 RUN ./bootstrap.sh && ./b2 install
 
 ENTRYPOINT [ "/bin/bash" ]

@@ -3,8 +3,11 @@ HHVM_PATH := /git/hhvm
 BASE_IMAGE_URL := http://cdimage.ubuntu.com/ubuntu-base/releases/16.04/release/ubuntu-base-16.04-core-arm64.tar.gz
 BASE_IMAGE := ./ubuntu-base-16.04-core-arm64.tar.gz
 
-LIBBOOST_URL := http://downloads.sourceforge.net/project/boost/boost/1.61.0/boost_1_61_0.tar.bz2
-LIBBOOST := ./boost_1_61_0.tar.bz2
+#LIBBOOST_URL := http://downloads.sourceforge.net/project/boost/boost/1.61.0/boost_1_61_0.tar.bz2
+#LIBBOOST := ./boost_1_61_0.tar.bz2
+
+LIBBOOST_URL := http://downloads.sourceforge.net/project/boost/boost/1.60.0/boost_1_60_0.tar.bz2
+LIBBOOST := ./boost_1_60_0.tar.bz2
 
 IMAGETAG := zlim/arm64-ubuntu-hhvm
 
