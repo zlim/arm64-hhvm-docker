@@ -54,3 +54,13 @@ clean:
 get:
 	HHVM_PATH=$(HHVM_PATH) bash -ex get_hhvm.sh
 
+HPHP_TEST := quick
+DOCKER_OPTS += -e HPHP_TEST=$(HPHP_TEST)
+TEST_SH := $(PWD)/test_hhvm.sh
+CONTAINER_TEST_SH := /tmp/test_hhvm.sh
+DOCKER_OPTS += -v $(TEST_SH):$(CONTAINER_TEST_SH):ro
+
+.PHONY: test
+test:
+	#HHVM_PATH=$(HHVM_PATH) HPHP_TEST=$(HPHP_TEST) bash -ex test_hhvm.sh
+	docker run --rm $(DOCKER_OPTS) $(IMAGETAG) -ex $(CONTAINER_TEST_SH)
