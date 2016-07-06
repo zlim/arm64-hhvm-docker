@@ -50,3 +50,7 @@ hhvm:
 clean:
 	docker run --rm $(DOCKER_OPTS) $(IMAGETAG) -x $(CONTAINER_CLEAN_SH)
 
+.PHONY: get
+get:
+	HHVM_PATH=$(HHVM_PATH) bash -ex get_hhvm.sh
+
