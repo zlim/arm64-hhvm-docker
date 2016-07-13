@@ -5,6 +5,8 @@ pushd ${HHVM_PATH}
 git checkout -b arm64
 git fetch origin pull/7206/head:sunil-sk-pr7206
 git cherry-pick sunil-sk-pr7206
+git fetch origin pull/7218/head:lpathy-pr7218
+git cherry-pick lpathy-pr7218
 git submodule update --init --recursive
 pushd third-party/folly/src/
 git checkout -b arm64
