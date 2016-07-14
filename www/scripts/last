@@ -1,0 +1,4 @@
+#!/bin/sh
+LOGPATH=${LOGPATH:-../logs}
+LASTLOG=`ls -t ${LOGPATH}/* | head -1`
+tail -n 100 -f ${LASTLOG}

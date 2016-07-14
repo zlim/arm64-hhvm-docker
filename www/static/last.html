@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<div id="nav" style="background-color:lightyellow;"></div>
+<div id="log" style="white-space:pre-wrap; font-family:monospace;"></div>
+<script>
+  var nav = document.getElementById('nav');
+  nav.innerHTML = '<iframe id="ifm" src="/logs/"></iframe>';
+
+  var ifm = document.getElementById('ifm');
+  ifm.onload = function() {
+    var pre = ifm.contentDocument.body.getElementsByTagName('pre')[0];
+    Array.prototype.forEach.call(pre.getElementsByTagName('a'), function(elem) { elem.href = elem.href; });
+    nav.appendChild(pre);
+    ifm.parentNode.removeChild(ifm);
+  };
+
+  // helper function: log message to screen
+  function log(msg) {
+    document.getElementById('log').textContent += msg + '\n';
+  }
+
+  // setup websocket with callbacks
+  var ws = new WebSocket('ws://' + document.location.host + '/last');
+  ws.onopen = function() {
+    log('== CONNECT ==');
+  };
+  ws.onclose = function() {
+    log('== DISCONNECT ==');
+  };
+  ws.onmessage = function(event) {
+    // log('MESSAGE: ' + event.data);
+    log(event.data);
+  };
+</script>
