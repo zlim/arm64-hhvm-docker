@@ -63,7 +63,7 @@ DOCKER_OPTS += -v $(TEST_SH):$(CONTAINER_TEST_SH):ro
 .PHONY: test
 test:
 	#HHVM_PATH=$(HHVM_PATH) HPHP_TEST=$(HPHP_TEST) bash -ex test_hhvm.sh
-	docker run --rm $(DOCKER_OPTS) $(IMAGETAG) -ex $(CONTAINER_TEST_SH)
+	docker run --rm $(DOCKER_OPTS) $(IMAGETAG) -x $(CONTAINER_TEST_SH)
 
 .PHONY: summary
 summary:
