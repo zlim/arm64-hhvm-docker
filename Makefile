@@ -11,7 +11,7 @@ IMAGETAG := zlim/arm64-ubuntu-hhvm
 
 .PHONY: build
 build: $(BASE_IMAGE) $(LIBBOOST)
-	docker build \
+	docker build --no-cache \
 		--build-arg BASE_IMAGE=$(BASE_IMAGE) \
 		--build-arg LIBBOOST=$(LIBBOOST) \
 		-t $(IMAGETAG) .
