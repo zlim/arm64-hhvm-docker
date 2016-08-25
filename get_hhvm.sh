@@ -14,8 +14,8 @@ pushd third-party/folly/src/
 git checkout -b arm64
 #git fetch origin pull/429/head:lpathy-pr429
 #git cherry-pick lpathy-pr429 || git cherry-pick --abort
-git fetch origin pull/430/head:zhangkehong2brad-pr430
-git cherry-pick zhangkehong2brad-pr430 || git cherry-pick --abort
+#git fetch origin pull/430/head:zhangkehong2brad-pr430
+#git cherry-pick zhangkehong2brad-pr430 || git cherry-pick --abort
 git fetch origin pull/456/head:guoxiao-pr456
 git cherry-pick guoxiao-pr456 || git cherry-pick --abort
 popd # third-party/folly/src/
