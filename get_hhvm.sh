@@ -2,13 +2,13 @@
 HHVM_PATH=${HHVM_PATH:-/git/hhvm}
 git clone --depth 1 https://github.com/facebook/hhvm.git ${HHVM_PATH}
 pushd ${HHVM_PATH}
-git checkout -b arm64
+#git checkout -b arm64
 #git fetch origin pull/7206/head:sunil-sk-pr7206
 #git cherry-pick sunil-sk-pr7206 || git cherry-pick --abort
 #git fetch origin pull/7218/head:lpathy-pr7218
 #git cherry-pick lpathy-pr7218 || git cherry-pick --abort
-git fetch origin pull/7226/head:sunil-sk-pr7226
-git cherry-pick sunil-sk-pr7226 || git cherry-pick --abort
+#git fetch origin pull/7226/head:sunil-sk-pr7226
+#git cherry-pick sunil-sk-pr7226 || git cherry-pick --abort
 git submodule update --init --recursive
 pushd third-party/folly/src/
 git checkout -b arm64
