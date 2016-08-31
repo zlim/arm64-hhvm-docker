@@ -10,10 +10,11 @@ HHVM_PATH=/git/hhvm-${HHVM_REV}
 HHVM_LOG=${LOGS_PATH}/make-hhvm-${HHVM_REV}.log
 HHVM_DEBUG_LOG=${LOGS_PATH}/make-hhvm-${HHVM_REV}-debug.log
 HPHP_TEST=all
+HPHP_DEBUG_TEST=quick
 
 make HHVM_PATH=${HHVM_PATH} HPHP_TEST=${HPHP_TEST} \
 	get summary hhvm test 2>&1 | tee ${HHVM_LOG}
 
-make HHVM_PATH=${HHVM_PATH} HPHP_TEST=${HPHP_TEST} CMAKE_BUILD_TYPE=Debug \
+make HHVM_PATH=${HHVM_PATH} HPHP_TEST=${HPHP_DEBUG_TEST} CMAKE_BUILD_TYPE=Debug \
 	clean summary hhvm test 2>&1 | tee ${HHVM_DEBUG_LOG}
 
