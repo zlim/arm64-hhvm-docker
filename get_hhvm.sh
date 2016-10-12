@@ -23,6 +23,6 @@ git cherry-pick guoxiao-pr456 || git cherry-pick --abort
 popd # third-party/folly/src/
 pushd third-party/mcrouter/src/
 git checkout -b arm64
-git fetch origin pull/134/head:zhangkehong2brad-pr134
-git cherry-pick zhangkehong2brad-pr134 || git cherry-pick --abort
+#git fetch origin pull/134/head:zhangkehong2brad-pr134
+#git cherry-pick zhangkehong2brad-pr134 || git cherry-pick --abort
 popd # third-party/mcrouter/src/
